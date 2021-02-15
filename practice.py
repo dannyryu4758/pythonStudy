@@ -84,6 +84,10 @@
 ###########################################################
 
 # # 사전
+from random import *
+# cabinet = dict(a="유재석", b="김태호")
+# print(cabinet['a'])  # 유재석
+
 # cabinet = {3: "유재석", 100: "김태호"}
 # print(cabinet[3])
 # print(cabinet[100])
@@ -120,7 +124,7 @@
 # # value 들만 출력
 # print(cabinet.values())
 
-# # key, value 쌍으로 출력
+# # key, value 쌍으로 출력 (튜플로 반환)
 # print(cabinet.items())
 
 # # 목욕탕 폐점
@@ -195,7 +199,6 @@
 ####################################################
 
 # # 추첨 기능
-from random import *
 # lst = [1, 2, 3, 4, 5]
 # print(lst)
 # # 순서 섞기
@@ -204,17 +207,35 @@ from random import *
 # # 샘플로 무작위로 하나 뽑기
 # print(sample(lst, 1))
 
-users = range(1, 21)  # 1 ~ 20까지숫자르 ㄹ생성
+# users = range(1, 21)  # 1 ~ 20까지숫자르 ㄹ생성
 # print(type(users))  # 타입이 range
-users = list(users)  # 자료 타입 변환
+# users = list(users)  # 자료 타입 변환
 # print(type(users))  # 타입이 list
 
-print(users)
-shuffle(users)
-print(users)
+# print(users)
+# shuffle(users)
+# print(users)
 
-winners = sample(users, 4)  # 4 명 중에서 1명은 치킨, 3명은 커피
-print("-- 당첨자 발표 --")
-print("치킨 당첨자 : {0}".format(winners[0]))
-print("커피 당첨자 : {0}".format(winners[1:]))
-print("-- 축하합니다 --")
+# winners = sample(users, 4)  # 4 명 중에서 1명은 치킨, 3명은 커피
+# print("-- 당첨자 발표 --")
+# print("치킨 당첨자 : {0}".format(winners[0]))
+# print("커피 당첨자 : {0}".format(winners[1:]))
+# print("-- 축하합니다 --")
+
+#####################################################
+
+# # 얕은 복사 VS 깊은 복사
+# 얕은 복사 : 주소가 복사되어 객체를 공유하는 경우
+# 깊은 복사 : 객체를 공유하지 않는 경우
+
+# 얕은 복사
+a = [1, 2, 3]
+b = a
+print(id(a))
+print(id(b))
+
+# 깊은 복사
+a = [1, 2, 3]
+b = a[:]
+print(id(a))
+print(id(b))
